@@ -12,17 +12,15 @@ var mySketch = function(myDrums) {
   var boom;
   var volumeBoom;
 
-
-
   myDrums.preload = function () {
-    boom = myDrums.loadSound('sounds/Broke_For_Free_-_01_-_As_Colorful_As_Ever.mp3');
+    //boom = myDrums.loadSound('sounds/ride.mp3');
   }
 
   p5.midi.onInput = function (event) {
     myDrums.clear();
     console.dir(event);
     myDrums.playSound();
-    //Drums.volumeControl();
+    //myDrums.volumeControl();
   }
 
   myDrums.setup = function (event) {
@@ -41,18 +39,24 @@ var mySketch = function(myDrums) {
       this.classList.remove('playing');
     }
 
-    console.log(boom);
+    //console.log(boom);
+
+    myDrums.micOn();
 
     myDrums.amplitude = new p5.Amplitude();
-    boom.setVolume(0.5);
-    //myDrums.amplitude.smooth(0.9);
+    //boom.setVolume(0.5);
+    myDrums.amplitude.setInput(mic);
+    myDrums.amplitude.smooth(0.9);
+
+    // /console.log(myDrums.amplitude.getLevel());
   }
 
   myDrums.draw = function () {
     myDrums.background(0);
     myDrums.fill(255);
     var level = myDrums.amplitude.getLevel();
-    var size = myDrums.map(level, 0, 1, 0, 200);
+    //console.log(level);
+    var size = myDrums.map(level, 0, 1, 0, 1000);
     myDrums.ellipse(myDrums.width/2, myDrums.height/2, size, size);
   }
 
@@ -84,6 +88,7 @@ var mySketch = function(myDrums) {
   }
 
   myDrums.volumeControl = function () {
+
     const volume = (event.data[2]);
     console.log('amplitude ' + amplitude);
     console.log('volume ' + volume);
@@ -94,6 +99,13 @@ var mySketch = function(myDrums) {
 
     }
 
+  }
+  myDrums.micOn = function () {
+    // Create an Audio input
+    mic = new p5.AudioIn();
+    // start the Audio Input.
+    // By default, it does not .connect() (to the computer speakers)
+    mic.start();
   }
 
 }
