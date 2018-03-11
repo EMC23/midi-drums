@@ -16,11 +16,19 @@ body,html {
   position: absolute;
 }
 
+hr {
+  background: rgba(0,0,0,0.4);
+  border: 0 none;
+  margin: 0 auto;
+  width: 80%;
+  height: 1px;
+}
+
 .keys {
   position: relative;
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 30vh;
   align-items: center;
   justify-content: center;
 }
