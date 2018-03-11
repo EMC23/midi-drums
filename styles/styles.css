@@ -1,0 +1,555 @@
+@charset "UTF-8";
+/* line 3, styles.scss */
+:root {
+  --black: black;
+  --white: white;
+}
+
+/* line 8, styles.scss */
+html {
+  background: #222;
+  background-size: cover;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+}
+
+/* line 16, styles.scss */
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+
+/* line 28, styles.scss */
+.demo-item {
+  width: 90vw;
+  min-height: 90vh;
+}
+
+/* line 35, styles.scss */
+.clock {
+  --second-degrees: 0;
+  display: inline-block;
+  width: 25rem;
+  height: 25rem;
+  border: 20px solid hsla(var(--second-degrees), 90%, 45%, 1);
+  border-radius: 50%;
+  margin: 50px 3rem;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px var(--black), 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* line 53, styles.scss */
+.clock.solid {
+  background-color: hsla(var(--second-degrees), 90%, 45%, 1);
+  box-shadow: none;
+}
+
+/* line 58, styles.scss */
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+  /* account for the height of the clock hands */
+}
+
+/* line 65, styles.scss */
+.hand {
+  width: 50%;
+  height: 6px;
+  background: var(--white);
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+@keyframes adjust0 {
+  0% {
+    fill: #d4cfbf;
+  }
+  10% {
+    fill: #ccd4bf;
+  }
+  10% {
+    fill: #bfd4bf;
+  }
+  30% {
+    fill: #bfd4cb;
+  }
+  40% {
+    fill: #bfd0d4;
+  }
+  50% {
+    fill: #bfc4d4;
+  }
+  60% {
+    fill: #c7bfd4;
+  }
+  70% {
+    fill: #d3bfd4;
+  }
+  80% {
+    fill: #d4bfc8;
+  }
+  90% {
+    fill: #d4c3bf;
+  }
+  100% {
+    fill: #c9c9c9;
+  }
+}
+@keyframes adjust1 {
+  0% {
+    fill: #bfb9a1;
+  }
+  10% {
+    fill: #b3bfa1;
+  }
+  10% {
+    fill: #a1bfa1;
+  }
+  30% {
+    fill: #a1bfb2;
+  }
+  40% {
+    fill: #a1babf;
+  }
+  50% {
+    fill: #a1a7bf;
+  }
+  60% {
+    fill: #aca1bf;
+  }
+  70% {
+    fill: #bfa1bf;
+  }
+  80% {
+    fill: #bfa1ad;
+  }
+  90% {
+    fill: #bfa6a1;
+  }
+  100% {
+    fill: #b0b0b0;
+  }
+}
+@keyframes adjust2 {
+  0% {
+    fill: #756633;
+  }
+  10% {
+    fill: #5d7533;
+  }
+  10% {
+    fill: #357533;
+  }
+  30% {
+    fill: #337559;
+  }
+  40% {
+    fill: #336a75;
+  }
+  50% {
+    fill: #334275;
+  }
+  60% {
+    fill: #4b3375;
+  }
+  70% {
+    fill: #733375;
+  }
+  80% {
+    fill: #753350;
+  }
+  90% {
+    fill: #753e33;
+  }
+  100% {
+    fill: #545454;
+  }
+}
+@keyframes adjust3 {
+  0% {
+    fill: #bdb18a;
+  }
+  10% {
+    fill: #aabd8a;
+  }
+  10% {
+    fill: #8bbd8a;
+  }
+  30% {
+    fill: #8abda7;
+  }
+  40% {
+    fill: #8ab4bd;
+  }
+  50% {
+    fill: #8a95bd;
+  }
+  60% {
+    fill: #9d8abd;
+  }
+  70% {
+    fill: #bb8abd;
+  }
+  80% {
+    fill: #bd8aa0;
+  }
+  90% {
+    fill: #bd928a;
+  }
+  100% {
+    fill: #a3a3a3;
+  }
+}
+@keyframes adjust4 {
+  0% {
+    fill: #4e4529;
+  }
+  10% {
+    fill: #404e29;
+  }
+  10% {
+    fill: #2a4e29;
+  }
+  30% {
+    fill: #294e3d;
+  }
+  40% {
+    fill: #29484e;
+  }
+  50% {
+    fill: #29314e;
+  }
+  60% {
+    fill: #36294e;
+  }
+  70% {
+    fill: #4c294e;
+  }
+  80% {
+    fill: #4e2939;
+  }
+  90% {
+    fill: #4e2f29;
+  }
+  100% {
+    fill: #3b3b3b;
+  }
+}
+@keyframes adjust5 {
+  0% {
+    fill: #c3b483;
+  }
+  10% {
+    fill: #acc383;
+  }
+  10% {
+    fill: #85c383;
+  }
+  30% {
+    fill: #83c3a8;
+  }
+  40% {
+    fill: #83b8c3;
+  }
+  50% {
+    fill: #8392c3;
+  }
+  60% {
+    fill: #9b83c3;
+  }
+  70% {
+    fill: #c183c3;
+  }
+  80% {
+    fill: #c3839f;
+  }
+  90% {
+    fill: #c38e83;
+  }
+  100% {
+    fill: #a3a3a3;
+  }
+}
+@keyframes adjust6 {
+  0% {
+    fill: #978445;
+  }
+  10% {
+    fill: #789745;
+  }
+  10% {
+    fill: #479745;
+  }
+  30% {
+    fill: #459773;
+  }
+  40% {
+    fill: #458997;
+  }
+  50% {
+    fill: #455897;
+  }
+  60% {
+    fill: #634597;
+  }
+  70% {
+    fill: #944597;
+  }
+  80% {
+    fill: #974568;
+  }
+  90% {
+    fill: #975345;
+  }
+  100% {
+    fill: #6e6e6e;
+  }
+}
+/* line 344, styles.scss */
+.💎 .gem0 {
+  fill: #d4c3bf;
+  animation: adjust0 5s linear infinite alternate;
+}
+/* line 348, styles.scss */
+.💎 .gem1 {
+  fill: #bfa6a1;
+  animation: adjust1 5s linear infinite alternate;
+}
+/* line 352, styles.scss */
+.💎 .gem2 {
+  fill: #995142;
+  animation: adjust2 5s linear infinite alternate;
+}
+/* line 356, styles.scss */
+.💎 .gem3 {
+  fill: #b78980;
+  animation: adjust3 5s linear infinite alternate;
+}
+/* line 360, styles.scss */
+.💎 .gem4 {
+  fill: black;
+  animation: adjust4 5s linear infinite alternate;
+}
+/* line 364, styles.scss */
+.💎 .gem5 {
+  fill: #be8579;
+  animation: adjust5 5s linear infinite alternate;
+}
+/* line 368, styles.scss */
+.💎 .gem6 {
+  fill: #975345;
+  animation: adjust6 5s linear infinite alternate;
+}
+
+/* line 375, styles.scss */
+.💎 {
+  display: block;
+  margin: auto;
+  width: 410px;
+  padding: 0 30px;
+  fill: #c7dce0;
+  stroke: none;
+}
+
+/* line 389, styles.scss */
+.value-scale div, .color-value-scale div, .saturation-value-scale div {
+  height: 77px;
+  width: calc(8vw - 11px);
+  margin-right: 5px;
+  display: inline-block;
+  border: 1px solid #efefef;
+}
+
+/* line 397, styles.scss */
+.value-scale .value1 {
+  background-color: black;
+}
+
+/* line 400, styles.scss */
+.value-scale .value2 {
+  background-color: #1a1a1a;
+}
+
+/* line 403, styles.scss */
+.value-scale .value3 {
+  background-color: #333333;
+}
+
+/* line 406, styles.scss */
+.value-scale .value4 {
+  background-color: #4d4d4d;
+}
+
+/* line 409, styles.scss */
+.value-scale .value5 {
+  background-color: #666666;
+}
+
+/* line 412, styles.scss */
+.value-scale .value6 {
+  background-color: gray;
+}
+
+/* line 415, styles.scss */
+.value-scale .value7 {
+  background-color: #999999;
+}
+
+/* line 418, styles.scss */
+.value-scale .value8 {
+  background-color: #b3b3b3;
+}
+
+/* line 421, styles.scss */
+.value-scale .value9 {
+  background-color: #cccccc;
+}
+
+/* line 424, styles.scss */
+.value-scale .value10 {
+  background-color: #e6e6e6;
+}
+
+/* line 427, styles.scss */
+.value-scale .value11 {
+  background-color: white;
+}
+
+/* line 432, styles.scss */
+.saturation-value-scale .value1 {
+  background-color: black;
+}
+
+/* line 435, styles.scss */
+.saturation-value-scale .value2 {
+  background-color: #330000;
+}
+
+/* line 438, styles.scss */
+.saturation-value-scale .value3 {
+  background-color: #660000;
+}
+
+/* line 441, styles.scss */
+.saturation-value-scale .value4 {
+  background-color: #990000;
+}
+
+/* line 444, styles.scss */
+.saturation-value-scale .value5 {
+  background-color: #cc0000;
+}
+
+/* line 447, styles.scss */
+.saturation-value-scale .value6 {
+  background-color: red;
+}
+
+/* line 450, styles.scss */
+.saturation-value-scale .value7 {
+  background-color: #ff3333;
+}
+
+/* line 453, styles.scss */
+.saturation-value-scale .value8 {
+  background-color: #ff6666;
+}
+
+/* line 456, styles.scss */
+.saturation-value-scale .value9 {
+  background-color: #ff9999;
+}
+
+/* line 459, styles.scss */
+.saturation-value-scale .value10 {
+  background-color: #ffcccc;
+}
+
+/* line 462, styles.scss */
+.saturation-value-scale .value11 {
+  background-color: white;
+}
+
+/* line 467, styles.scss */
+.color-value-scale .value1 {
+  background-color: black;
+}
+
+/* line 470, styles.scss */
+.color-value-scale .value2 {
+  background-color: #331a00;
+}
+
+/* line 473, styles.scss */
+.color-value-scale .value3 {
+  background-color: #666600;
+}
+
+/* line 476, styles.scss */
+.color-value-scale .value4 {
+  background-color: #4d9900;
+}
+
+/* line 479, styles.scss */
+.color-value-scale .value5 {
+  background-color: #00cc00;
+}
+
+/* line 482, styles.scss */
+.color-value-scale .value6 {
+  background-color: #00ffaa;
+}
+
+/* line 485, styles.scss */
+.color-value-scale .value7 {
+  background-color: #33ddff;
+}
+
+/* line 488, styles.scss */
+.color-value-scale .value8 {
+  background-color: #6699ff;
+}
+
+/* line 491, styles.scss */
+.color-value-scale .value9 {
+  background-color: #bb99ff;
+}
+
+/* line 494, styles.scss */
+.color-value-scale .value10 {
+  background-color: #f7ccff;
+}
+
+/* line 497, styles.scss */
+.color-value-scale .value11 {
+  background-color: white;
+}
+
+/* line 501, styles.scss */
+.🍰 {
+  font-size: 16px;
+  color: #efefef;
+}
+
+/* line 506, styles.scss */
+.demo-text-block {
+  text-align: left;
+  margin: 10px auto 45px auto;
+  padding: 30px;
+  background-color: rgba(219, 194, 189, 0.2);
+  max-width: 800px;
+  font-size: 15px;
+  color: #efefef;
+}
